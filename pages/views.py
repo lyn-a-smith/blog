@@ -15,6 +15,16 @@ class HomePageView(TemplateView):
         context['address'] = "123 Main St, Anytown, USA"
         context['email'] = "lyn@example.com"
         return context
+    
+class AboutPageView(TemplateView):
+    template_name = "pages/about.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = "Lyn"
+        context['address'] = "123 Main St, Anytown, USA"
+        context['email'] = "lyn@example.com"
+        return context
 
 # Function Based View
 def contact_me(request):
