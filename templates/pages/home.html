@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block content %}
     <div>
         <h1>Home Page View</h1>
+        <img width="500" src="{% static 'img/example.jpg' %}" alt="blog picture">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi sed minus neque tempore veniam libero, beatae, perspiciatis fuga explicabo non excepturi pariatur, unde debitis sunt corrupti illum necessitatibus tenetur rem?</p>
     </div>
     <div>
@@ -15,6 +18,8 @@
         <span><strong>Address:</strong> {{ address }}</span>
         <span><strong>Email:</strong> {{ email }}</span>
     </div>
-    
-</body>
-</html>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

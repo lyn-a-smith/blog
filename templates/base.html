@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    {% block css %}{% endblock css %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <main class="container">
+    {% block content %}
+    <!-- Pages will be rendered here. -->
+    {% endblock content %}
+    </main>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1W16k7i8W60kUc9v2qzO1e9y9fQF5d0V4lZp7X0v2pG2sL5sN5q+4J7h6H8QfF"
+        crossorigin="anonymous"></script>
+
+    {% block js %}{%endblock js %}
+</body>
+
+</html>
