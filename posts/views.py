@@ -6,7 +6,7 @@ from django.views.generic import (
     UpdateView, 
     DeleteView
     )
-from .models import Post
+from .models import Post, Status
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 
@@ -19,6 +19,15 @@ class PostListView(ListView): #GET Request -> List
     model = Post
     # contect_object_name attribute specifies the name of the context variable to use in the template
     context_object_name = 'posts'
+
+    def get_queryset(self):
+        published_status = Status.objects.get(name='Published')
+        return Post.objects.filter(status=published_status).order_by('created_on').reverse()
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        return context
 
 class PostDetailView(DetailView): #GET Request -> single object
     template_name = 'posts/detail.html'

@@ -9,9 +9,9 @@
     <h1>Post #{{ single_post.id }}</h1>
     <h2>Title: {{ single_post.title }}</h2>
     <h3>Subtitle: {{ single_post.subtitle }}</h3>
+    <span><strong>Status: {{ single_post.status.name }}</strong></span>
     <span><strong>Date: {{ single_post.created_on }}</strong></span><br/>
     <span><strong>Author: {{ single_post.author }}</strong></span> <br/>
-    <span><strong>Status: {{ single_post.status.name }}</strong></span>
 
     <hr>
     <p>{{ single_post.body }}</p>

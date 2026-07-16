@@ -33,4 +33,4 @@ class Status(models.Model):
     description = models.CharField(max_length=256, help_text="Write a description about the status")
 
     def __str__(self): 
-        return f"Status (ID= {self.id} - Name= {self.name} - Description= {self.description[:25]}...)"
+        return f"{self.name}"
